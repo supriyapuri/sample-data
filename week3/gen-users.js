@@ -19,6 +19,10 @@ const dbName = 'week3';
 const url = 'mongodb://localhost:27017';
 
 MongoClient.connect(url, function(err, client) {
+	if (err) {
+		console.error('FATAL ERROR', e);
+		return;
+	}
   const db = client.db(dbName);
 	for (let i = 0; i < 200000; i++) {
 		const numTransactions = _.random(0, 20);
